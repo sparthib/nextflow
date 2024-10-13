@@ -1,0 +1,91 @@
+---
+title: "Using Nextflow"
+editor: visual
+---
+
+Installing nextflow: There are several ways to install nextflow. If you are on a HPC, you can ask your system administrator to install it for you, or [install it using conda.](https://anaconda.org/bioconda/nextflow)
+
+In nextflow, there are three different main terms that are used to define the workflow. These are processes, channels, and operators.
+
+## Process definition
+
+You can think of process as a function of your input data.
+
+For example, if you have an input fastq file, your process would be to align it to an input reference genome.
+
+Nextflow processes are stored in a file with the extension `.nf`.
+
+## How to run a process
+
+Let's run an example process called `sayHello` that prints "Hello, world!" to the terminal.
+
+**Step 1**: On the terminal, you can create a nextflow script by typing `touch script.nf` and then opening the file in your text editor.
+
+**Step 2**: Copy and paste the following code into the file:
+
+```         
+process sayHello { 
+    """
+    echo "Hello, world!"
+    """
+}
+```
+
+**Step 3**: Save the file and run the script by typing `nextflow script.nf` in the terminal.
+
+Now, in order to run this process, it has to be called. Analogous to calling a python function on its main function,
+
+In your .nf file, paste the below snippet.
+
+```         
+workflow {
+    sayHello()
+}
+```
+
+Now, you can run your `.nf` script using the command `nextflow run script.nf` in the terminal.
+
+If your script runs without any error, you'll see an output declaring that 100% of the process has been executed such as below.
+
+```         
+N E X T F L O W  ~  version 23.10.0
+Launching `hello_world.nf` [naughty_kalman] DSL2 - revision: 3d162a2807
+executor >  local (1)
+[ac/d7ee11] process > sayHello [100%] 1 of 1 ✔
+```
+
+## Printing vs. saving the output to a file
+
+In the directory where you ran the script, you should see a new directory called `work` that contains the output of the process. Since we didn't save the output of the process to a file, the output will be printed in a `.command.log` file.
+
+If you want to instead see it printed along with the rest of the output above, you can instead run
+
+```         
+nextflow run script.nf -process.echo 
+```
+
+Now, let's modify the script to save the output to a file in our desired directory.
+
+```         
+process sayHello { 
+    """
+    echo "Hello, world!" > /users/sparthib/nextflow_tutorials/hello.txt
+    """
+}
+```
+
+## Commands with different languages
+
+Now let's say, instead of bash, we want to use a python command to print "Hello, world!" to the terminal. We can do this by modifying the process as below.
+
+```         
+
+process sayHello { 
+"""
+#!/path_to_bin/python 
+print("Hello, world!") 
+"""
+}
+```
+
+The first line here indicates which program we want to run and where it's stored. In this case it's python, you can replace "path_to_bin" with the path outputted when you run `which python` or `where python` depending on your OS.

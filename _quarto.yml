@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "nextflow"
+  author: "Sowmya Parthiban"
+  date: "10/13/2024"
+  chapters:
+    - index.qmd
+    - processes.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
