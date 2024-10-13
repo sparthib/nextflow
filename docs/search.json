@@ -33,5 +33,26 @@
     "title": "2  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "more_python_commands.html#running-a-python-script-in-nextflow",
+    "href": "more_python_commands.html#running-a-python-script-in-nextflow",
+    "title": "2  Running Scripts from external languages",
+    "section": "2.1 Running a python script in nextflow",
+    "text": "2.1 Running a python script in nextflow\nWe know now how to run a python command within a process.\nBut what if your commands are stored in a separate python script or Rscript?\nFor example, let’s say we want python to add up two numbers. Create a python script in the same directory as your .nf file and name it add.py. Copy and paste the below code into the script.\nx=1\ny=5\nresult= x+1\nprint(\"The result is \",result)\nNow, let’s create the process in a new file called add_numbers.nf to run this python script.\nprocess addNumbers {\n    \"\"\"\n    python /path_to_python_script/add.py\n    \"\"\"\n}\n\nworkflow {\n    addNumbers()\n}\nReplace the /path_to_python_script/ with the path to the directory where your python script is stored.\nWe will run our nextflow script using the command nextflow run add_numbers.nf -process.echo in the terminal."
+  },
+  {
+    "objectID": "more_python_commands.html#running-multiple-processes-from-different-languages-in-nextflow",
+    "href": "more_python_commands.html#running-multiple-processes-from-different-languages-in-nextflow",
+    "title": "2  Running Scripts from external languages",
+    "section": "2.2 Running multiple processes from different languages in nextflow",
+    "text": "2.2 Running multiple processes from different languages in nextflow\nSimilarly, to run an Rscript, create add.R in the same directory as your .nf file and copy the below code into the script.\nx &lt;- 1\ny &lt;- 5\nresult &lt;- x + y\nprint(paste(\"The R result is\", result))\nNow, let’s add a process called addNumbers_in_R and modify our existing workflow to include it as well.\nprocess addNumbers_in_R {\n    \"\"\"\n    Rscript /path_to_R_script/add.R\n    \"\"\"\n}\n\nworkflow {\n    addNumbers_in_R()\n    addNumbers()\n}\nAfter running nextflow run add_numbers.nf -process.echo, you should see the output of both the python and R scripts printed in the terminal.\nLaunching `add_numbers.nf` [special_monod] DSL2 - revision: 320a2d0023\nexecutor &gt;  local (2)\n[bf/d8e48d] process &gt; addNumbers_in_R [100%] 1 of 1 ✔\n[be/e6687a] process &gt; addNumbers      [100%] 1 of 1 ✔\nThe result is  2\n\n[1] \"The R result is 6\""
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nextflow",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
   }
 ]

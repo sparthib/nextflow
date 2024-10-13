@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Running Scripts from external languages</title>
+<title>nextflow - References</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,32 +20,141 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="more_python_commands_files/libs/clipboard/clipboard.min.js"></script>
-<script src="more_python_commands_files/libs/quarto-html/quarto.js"></script>
-<script src="more_python_commands_files/libs/quarto-html/popper.min.js"></script>
-<script src="more_python_commands_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="more_python_commands_files/libs/quarto-html/anchor.min.js"></script>
-<link href="more_python_commands_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="more_python_commands_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="more_python_commands_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="more_python_commands_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="more_python_commands_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
 </head>
 
-<body class="fullcontent">
+<body class="nav-sidebar floating">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">nextflow</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./processes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Using Nextflow</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Running Scripts from external languages</h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -60,58 +169,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="running-a-python-script-in-nextflow" class="level2">
-<h2 class="anchored" data-anchor-id="running-a-python-script-in-nextflow">Running a python script in nextflow</h2>
-<p>We know now how to run a python command within a process.</p>
-<p>But what if your commands are stored in a separate python script or Rscript?</p>
-<p>For example, let’s say we want python to add up two numbers. Create a python script in the same directory as your <code>.nf</code> file and name it <code>add.py</code>. Copy and paste the below code into the script.</p>
-<pre><code>x=1
-y=5
-result= x+1
-print("The result is ",result)</code></pre>
-<p>Now, let’s create the process in a new file called <code>add_numbers.nf</code> to run this python script.</p>
-<pre><code>process addNumbers {
-    """
-    python /path_to_python_script/add.py
-    """
-}
+<div id="refs" role="list" style="display: none">
 
-workflow {
-    addNumbers()
-}</code></pre>
-<p>Replace the <code>/path_to_python_script/</code> with the path to the directory where your python script is stored.</p>
-<p>We will run our nextflow script using the command <code>nextflow run add_numbers.nf -process.echo</code> in the terminal.</p>
-</section>
-<section id="running-multiple-processes-from-different-languages-in-nextflow" class="level2">
-<h2 class="anchored" data-anchor-id="running-multiple-processes-from-different-languages-in-nextflow">Running multiple processes from different languages in nextflow</h2>
-<p>Similarly, to run an Rscript, create <code>add.R</code> in the same directory as your <code>.nf</code> file and copy the below code into the script.</p>
-<pre><code>x &lt;- 1
-y &lt;- 5
-result &lt;- x + y
-print(paste("The R result is", result))</code></pre>
-<p>Now, let’s add a process called <code>addNumbers_in_R</code> and modify our existing workflow to include it as well.</p>
-<pre><code>process addNumbers_in_R {
-    """
-    Rscript /path_to_R_script/add.R
-    """
-}
+</div>
 
-workflow {
-    addNumbers_in_R()
-    addNumbers()
-}</code></pre>
-<p>After running <code>nextflow run add_numbers.nf -process.echo</code>, you should see the output of both the python and R scripts printed in the terminal.</p>
-<pre><code>Launching `add_numbers.nf` [special_monod] DSL2 - revision: 320a2d0023
-executor &gt;  local (2)
-[bf/d8e48d] process &gt; addNumbers_in_R [100%] 1 of 1 ✔
-[be/e6687a] process &gt; addNumbers      [100%] 1 of 1 ✔
-The result is  2
 
-[1] "The R result is 6"</code></pre>
-</section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -345,6 +409,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./summary.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
