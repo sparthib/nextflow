@@ -3,7 +3,9 @@ title: "Using Nextflow"
 editor: visual
 ---
 
-Installing nextflow: There are several ways to install nextflow. If you are on a HPC, you can ask your system administrator to install it for you, or [install it using conda.](https://anaconda.org/bioconda/nextflow)
+## Installing Nextflow
+
+There are several ways to install nextflow. If you are on a HPC, you can ask your system administrator to install it for you, or [install it using conda.](https://anaconda.org/bioconda/nextflow)
 
 In nextflow, there are three different main terms that are used to define the workflow. These are processes, channels, and operators.
 
@@ -30,6 +32,8 @@ process sayHello {
     """
 }
 ```
+
+As noticed in the code above, nextflow by default assumes the bash scripting language, unless specified with a shebang i.e., "#!". We'll see how to include other languages later in the tutorial.
 
 **Step 3**: Save the file and run the script by typing `nextflow script.nf` in the terminal.
 
