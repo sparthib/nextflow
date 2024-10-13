@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - processes.qmd
+    - more_python_commands.qmd
     - summary.qmd
     - references.qmd
 
