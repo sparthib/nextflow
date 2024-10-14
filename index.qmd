@@ -1,3 +1,3 @@
-# Nextflow Introduction  {.unnumbered}
+# Nextflow Introduction {.unnumbered}
 
 Nextflow is a workflow management system that allows you to write scripts to run your processes in a reproducible and scalable manner. It is particularly useful for bioinformatics pipelines, where you may have many processes that depend on each other and need to be run in a specific order.
