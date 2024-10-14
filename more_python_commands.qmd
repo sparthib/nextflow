@@ -3,6 +3,7 @@ title: "Running Scripts from external languages"
 ---
 
 ## Running a python script in nextflow
+
 We know now how to run a python command within a process.
 
 But what if your commands are stored in a separate python script or Rscript?
@@ -62,7 +63,7 @@ workflow {
 
 After running `nextflow run add_numbers.nf -process.echo`, you should see the output of both the python and R scripts printed in the terminal.
 
-```
+```         
 Launching `add_numbers.nf` [special_monod] DSL2 - revision: 320a2d0023
 executor >  local (2)
 [bf/d8e48d] process > addNumbers_in_R [100%] 1 of 1 ✔
@@ -71,5 +72,3 @@ The result is  2
 
 [1] "The R result is 6"
 ```
-
-
