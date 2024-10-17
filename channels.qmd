@@ -3,3 +3,47 @@ title: "channels"
 ---
 
 <https://www.youtube.com/watch?v=FpvAWIeENfM>
+
+What are channels?
+
+Channels are a nextflow datastructure that are used to connect tasks to each other or to implement functional style data transformations.
+
+Queue channels vs. value channels
+
+poison pill - is a stop st
+
+```
+ch = Channel.from(1, 2, 3, 4, 5)
+ch.view()
+
+```
+
+# list of values
+```
+ch = Channel.from([1, 2, 3, 4, 5])
+ch.view()
+```
+
+## Value channel - input data is a single value
+```
+ch = Channel.value(1)
+ch.view()
+```
+
+## Channel factories 
+
+Channel factories are specific types of channels present in nextflow by default to access
+your data in specific ways.
+
+One super common way is when you have your data stored in a file, say `.csv` and your workflow could read this data through the `fromPath` channel factory.
+
+The NCBI SRA (Sequence Read Archive) is a publically available repository of raw sequencing data. 
+For easy access to this data in your workflow, Nextflow provides the `fromSRA` channel factory.
+The use of this channel factory requeire an NCBI login however. 
+
+
+
+
+
+
+
