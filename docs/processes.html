@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>nextflow - 1&nbsp; Using Nextflow</title>
+<title>nextflow - 2&nbsp; Using Nextflow</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -63,6 +97,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -74,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./processes.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Using Nextflow</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./processes.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using Nextflow</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -102,25 +137,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nextflow Introduction</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Nextflow Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./processes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Using Nextflow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using Nextflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./more_python_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Running Scripts from external languages</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Scripts from external languages</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -139,11 +168,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-nextflow" id="toc-installing-nextflow" class="nav-link active" data-scroll-target="#installing-nextflow"><span class="header-section-number">1.1</span> Installing Nextflow</a></li>
-  <li><a href="#process-definition" id="toc-process-definition" class="nav-link" data-scroll-target="#process-definition"><span class="header-section-number">1.2</span> Process definition</a></li>
-  <li><a href="#how-to-run-a-process" id="toc-how-to-run-a-process" class="nav-link" data-scroll-target="#how-to-run-a-process"><span class="header-section-number">1.3</span> How to run a process</a></li>
-  <li><a href="#printing-vs.-saving-the-output-to-a-file" id="toc-printing-vs.-saving-the-output-to-a-file" class="nav-link" data-scroll-target="#printing-vs.-saving-the-output-to-a-file"><span class="header-section-number">1.4</span> Printing vs.&nbsp;saving the output to a file</a></li>
-  <li><a href="#commands-with-different-languages" id="toc-commands-with-different-languages" class="nav-link" data-scroll-target="#commands-with-different-languages"><span class="header-section-number">1.5</span> Commands with different languages</a></li>
+  <li><a href="#installing-nextflow" id="toc-installing-nextflow" class="nav-link active" data-scroll-target="#installing-nextflow"><span class="header-section-number">2.1</span> Installing Nextflow</a></li>
+  <li><a href="#process-definition" id="toc-process-definition" class="nav-link" data-scroll-target="#process-definition"><span class="header-section-number">2.2</span> Process definition</a></li>
+  <li><a href="#how-to-run-a-process" id="toc-how-to-run-a-process" class="nav-link" data-scroll-target="#how-to-run-a-process"><span class="header-section-number">2.3</span> How to run a process</a></li>
+  <li><a href="#printing-vs.-saving-the-output-to-a-file" id="toc-printing-vs.-saving-the-output-to-a-file" class="nav-link" data-scroll-target="#printing-vs.-saving-the-output-to-a-file"><span class="header-section-number">2.4</span> Printing vs.&nbsp;saving the output to a file</a></li>
+  <li><a href="#commands-with-different-languages" id="toc-commands-with-different-languages" class="nav-link" data-scroll-target="#commands-with-different-languages"><span class="header-section-number">2.5</span> Commands with different languages</a></li>
   </ul>
 </nav>
     </div>
@@ -152,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Using Nextflow</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using Nextflow</span></h1>
 </div>
 
 
@@ -167,63 +196,78 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="installing-nextflow" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="installing-nextflow"><span class="header-section-number">1.1</span> Installing Nextflow</h2>
+<section id="installing-nextflow" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="installing-nextflow"><span class="header-section-number">2.1</span> Installing Nextflow</h2>
 <p>There are several ways to install nextflow. If you are on a HPC, you can ask your system administrator to install it for you, or <a href="https://anaconda.org/bioconda/nextflow">install it using conda.</a></p>
+<p>On JHPCE, it is already installed. You can load it using</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ml</span> load nextflow</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In nextflow, there are three different main terms that are used to define the workflow. These are processes, channels, and operators.</p>
 </section>
-<section id="process-definition" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="process-definition"><span class="header-section-number">1.2</span> Process definition</h2>
+<section id="process-definition" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="process-definition"><span class="header-section-number">2.2</span> Process definition</h2>
 <p>You can think of process as a function of your input data.</p>
 <p>For example, if you have an input fastq file, your process would be to align it to an input reference genome.</p>
 <p>Nextflow processes are stored in a file with the extension <code>.nf</code>.</p>
 </section>
-<section id="how-to-run-a-process" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="how-to-run-a-process"><span class="header-section-number">1.3</span> How to run a process</h2>
+<section id="how-to-run-a-process" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="how-to-run-a-process"><span class="header-section-number">2.3</span> How to run a process</h2>
 <p>Let’s run an example process called <code>sayHello</code> that prints “Hello, world!” to the terminal.</p>
 <p><strong>Step 1</strong>: On the terminal, you can create a nextflow script by typing <code>touch script.nf</code> and then opening the file in your text editor.</p>
-<p><strong>Step 2</strong>: Copy and paste the following code into the file:</p>
-<pre><code>process sayHello { 
-    """
-    echo "Hello, world!"
-    """
-}</code></pre>
+<p><strong>Step 2</strong>: Copy and paste the following code into the <code>.nf</code> file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{nextflow}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">process sayHello {</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">    echo "Hello, world!"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>As noticed in the code above, nextflow by default assumes the bash scripting language, unless specified with a shebang i.e., “#!”. We’ll see how to include other languages later in the tutorial.</p>
 <p><strong>Step 3</strong>: Save the file and run the script by typing <code>nextflow script.nf</code> in the terminal.</p>
 <p>Now, in order to run this process, it has to be called. Analogous to calling a python function on its main function,</p>
-<p>In your .nf file, paste the below snippet.</p>
-<pre><code>workflow {
-    sayHello()
-}</code></pre>
+<p>In your <code>.nf</code> file, paste the below snippet.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{nextflow}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">workflow {</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">    sayHello()</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, you can run your <code>.nf</code> script using the command <code>nextflow run script.nf</code> in the terminal.</p>
 <p>If your script runs without any error, you’ll see an output declaring that 100% of the process has been executed such as below.</p>
-<pre><code>N E X T F L O W  ~  version 23.10.0
-Launching `hello_world.nf` [naughty_kalman] DSL2 - revision: 3d162a2807
-executor &gt;  local (1)
-[ac/d7ee11] process &gt; sayHello [100%] 1 of 1 ✔</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">N</span> E X T F L O W  ~  version 23.10.0</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Launching</span> <span class="kw">`</span><span class="ex">hello_world.nf</span><span class="kw">`</span> <span class="pp">[</span><span class="ss">naughty_kalman</span><span class="pp">]</span> DSL2 <span class="at">-</span> revision: 3d162a2807</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">executor</span> <span class="op">&gt;</span>  local <span class="er">(</span><span class="ex">1</span><span class="kw">)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">[ac/d7ee11]</span> process <span class="op">&gt;</span> sayHello <span class="pp">[</span><span class="ss">100%</span><span class="pp">]</span> 1 of 1 ✔</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="printing-vs.-saving-the-output-to-a-file" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="printing-vs.-saving-the-output-to-a-file"><span class="header-section-number">1.4</span> Printing vs.&nbsp;saving the output to a file</h2>
+<section id="printing-vs.-saving-the-output-to-a-file" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="printing-vs.-saving-the-output-to-a-file"><span class="header-section-number">2.4</span> Printing vs.&nbsp;saving the output to a file</h2>
 <p>In the directory where you ran the script, you should see a new directory called <code>work</code> that contains the output of the process. Since we didn’t save the output of the process to a file, the output will be printed in a <code>.command.log</code> file.</p>
 <p>If you want to instead see it printed along with the rest of the output above, you can instead run</p>
-<pre><code>nextflow run script.nf -process.echo </code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nextflow</span> run script.nf <span class="at">-process.echo</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, let’s modify the script to save the output to a file in our desired directory.</p>
-<pre><code>process sayHello { 
-    """
-    echo "Hello, world!" &gt; /users/sparthib/nextflow_tutorials/hello.txt
-    """
-}</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{nextflow}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">process sayHello {</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">    echo "Hello, world!" &gt; /users/sparthib/nextflow_tutorials/hello.txt</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="commands-with-different-languages" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="commands-with-different-languages"><span class="header-section-number">1.5</span> Commands with different languages</h2>
+<section id="commands-with-different-languages" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="commands-with-different-languages"><span class="header-section-number">2.5</span> Commands with different languages</h2>
 <p>Now let’s say, instead of bash, we want to use a python command to print “Hello, world!” to the terminal. We can do this by modifying the process as below.</p>
-<pre><code>
-process sayHello { 
-"""
-#!/path_to_bin/python 
-print("Hello, world!") 
-"""
-}</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{nextflow}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">process sayHello {</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">"""</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">#!/path_to_bin/python </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">print("Hello, world!") </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">"""</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The first line here indicates which program we want to run and where it’s stored. In this case it’s python, you can replace “path_to_bin” with the path outputted when you run <code>which python</code> or <code>where python</code> depending on your OS.</p>
 
 
@@ -466,12 +510,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Nextflow Introduction</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Nextflow Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./more_python_commands.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Running Scripts from external languages</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Running Scripts from external languages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
