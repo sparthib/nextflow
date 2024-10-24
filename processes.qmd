@@ -7,6 +7,12 @@ editor: visual
 
 There are several ways to install nextflow. If you are on a HPC, you can ask your system administrator to install it for you, or [install it using conda.](https://anaconda.org/bioconda/nextflow)
 
+On JHPCE, it is already installed. You can load it using
+
+```{bash}
+ml load nextflow
+```
+
 In nextflow, there are three different main terms that are used to define the workflow. These are processes, channels, and operators.
 
 ## Process definition
@@ -25,7 +31,7 @@ Let's run an example process called `sayHello` that prints "Hello, world!" to th
 
 **Step 2**: Copy and paste the following code into the file:
 
-```         
+```{nextflow}
 process sayHello { 
     """
     echo "Hello, world!"
@@ -41,7 +47,7 @@ Now, in order to run this process, it has to be called. Analogous to calling a p
 
 In your .nf file, paste the below snippet.
 
-```         
+```{nextflow}
 workflow {
     sayHello()
 }
@@ -64,13 +70,13 @@ In the directory where you ran the script, you should see a new directory called
 
 If you want to instead see it printed along with the rest of the output above, you can instead run
 
-```         
+```{bash}
 nextflow run script.nf -process.echo 
 ```
 
 Now, let's modify the script to save the output to a file in our desired directory.
 
-```         
+```{nextflow}
 process sayHello { 
     """
     echo "Hello, world!" > /users/sparthib/nextflow_tutorials/hello.txt
@@ -82,8 +88,7 @@ process sayHello {
 
 Now let's say, instead of bash, we want to use a python command to print "Hello, world!" to the terminal. We can do this by modifying the process as below.
 
-```         
-
+```{nextflow}
 process sayHello { 
 """
 #!/path_to_bin/python 

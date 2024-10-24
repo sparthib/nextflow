@@ -12,20 +12,21 @@ Queue channels vs. value channels
 
 poison pill - is a stop st
 
-```
+```{nextflow}
 ch = Channel.from(1, 2, 3, 4, 5)
 ch.view()
 
 ```
 
 # list of values
-```
+```{nextflow}
 ch = Channel.from([1, 2, 3, 4, 5])
 ch.view()
 ```
 
 ## Value channel - input data is a single value
-```
+
+```{nextflow}
 ch = Channel.value(1)
 ch.view()
 ```
