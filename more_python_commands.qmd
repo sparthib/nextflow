@@ -2,6 +2,7 @@
 title: "Running Scripts from external languages"
 ---
 
+
 ## Running a python script in nextflow
 
 We know now how to run a python command within a process.
@@ -10,7 +11,7 @@ But what if your commands are stored in a separate python script or Rscript?
 
 For example, let's say we want python to add up two numbers. Create a python script in the same directory as your `.nf` file and name it `add.py`. Copy and paste the below code into the script.
 
-```{python}        
+```{{python}}
 x=1
 y=5
 result= x+1
@@ -19,7 +20,7 @@ print("The result is ",result)
 
 Now, let's create the process in a new file called `add_numbers.nf` to run this python script.
 
-```{nextflow}         
+```{{nextflow}}
 process addNumbers {
     """
     python /path_to_python_script/add.py
@@ -39,7 +40,7 @@ We will run our nextflow script using the command `nextflow run add_numbers.nf -
 
 Similarly, to run an Rscript, create `add.R` in the same directory as your `.nf` file and copy the below code into the script.
 
-```{R}        
+```{{R}}
 x <- 1
 y <- 5
 result <- x + y
@@ -48,7 +49,7 @@ print(paste("The R result is", result))
 
 Now, let's add a process called `addNumbers_in_R` and modify our existing workflow to include it as well.
 
-```{nextflow}        
+```{{nextflow}}
 process addNumbers_in_R {
     """
     Rscript /path_to_R_script/add.R
@@ -63,7 +64,7 @@ workflow {
 
 After running `nextflow run add_numbers.nf -process.echo`, you should see the output of both the python and R scripts printed in the terminal.
 
-```         
+```{{bash}}         
 Launching `add_numbers.nf` [special_monod] DSL2 - revision: 320a2d0023
 executor >  local (2)
 [bf/d8e48d] process > addNumbers_in_R [100%] 1 of 1 ✔

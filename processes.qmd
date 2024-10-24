@@ -9,7 +9,7 @@ There are several ways to install nextflow. If you are on a HPC, you can ask you
 
 On JHPCE, it is already installed. You can load it using
 
-```{bash}
+```{{bash}}
 ml load nextflow
 ```
 
@@ -29,10 +29,10 @@ Let's run an example process called `sayHello` that prints "Hello, world!" to th
 
 **Step 1**: On the terminal, you can create a nextflow script by typing `touch script.nf` and then opening the file in your text editor.
 
-**Step 2**: Copy and paste the following code into the file:
+**Step 2**: Copy and paste the following code into the `.nf` file:
 
-```{nextflow}
-process sayHello { 
+```{{nextflow}}
+process sayHello {
     """
     echo "Hello, world!"
     """
@@ -45,9 +45,9 @@ As noticed in the code above, nextflow by default assumes the bash scripting lan
 
 Now, in order to run this process, it has to be called. Analogous to calling a python function on its main function,
 
-In your .nf file, paste the below snippet.
+In your `.nf` file, paste the below snippet.
 
-```{nextflow}
+```{{nextflow}}
 workflow {
     sayHello()
 }
@@ -57,7 +57,7 @@ Now, you can run your `.nf` script using the command `nextflow run script.nf` in
 
 If your script runs without any error, you'll see an output declaring that 100% of the process has been executed such as below.
 
-```         
+```{{bash}}     
 N E X T F L O W  ~  version 23.10.0
 Launching `hello_world.nf` [naughty_kalman] DSL2 - revision: 3d162a2807
 executor >  local (1)
@@ -70,14 +70,14 @@ In the directory where you ran the script, you should see a new directory called
 
 If you want to instead see it printed along with the rest of the output above, you can instead run
 
-```{bash}
-nextflow run script.nf -process.echo 
+```{{bash}}
+nextflow run script.nf -process.echo
 ```
 
 Now, let's modify the script to save the output to a file in our desired directory.
 
-```{nextflow}
-process sayHello { 
+```{{nextflow}}
+process sayHello {
     """
     echo "Hello, world!" > /users/sparthib/nextflow_tutorials/hello.txt
     """
@@ -88,8 +88,8 @@ process sayHello {
 
 Now let's say, instead of bash, we want to use a python command to print "Hello, world!" to the terminal. We can do this by modifying the process as below.
 
-```{nextflow}
-process sayHello { 
+```{{nextflow}}
+process sayHello {
 """
 #!/path_to_bin/python 
 print("Hello, world!") 

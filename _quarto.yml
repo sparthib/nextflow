@@ -10,7 +10,6 @@ book:
     - index.qmd
     - processes.qmd
     - more_python_commands.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -18,6 +17,8 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    css: styles.css
+    copy-code: true
   pdf:
     documentclass: scrreprt
 
