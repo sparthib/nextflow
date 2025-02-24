@@ -1,0 +1,49 @@
+---
+title: "Running Scripts in Sequence"
+format: html
+execute:
+  eval: false  # Prevents all code chunks from running
+---
+
+In computational biology, where you very often every downstream step has its own script,
+
+For example, counts matrix QC and normalization -\> Differential Gene Expression -\> Visualization,
+
+it may be efficient to pack these scripts into a nextflow pipeline so that the same series of methods are used for different datasets.
+
+This is useful in big-scale projects where sequencing of new samples has to be done over several months or studies.
+
+Let's take a look at a simple example here.
+
+Say you have scripts, `matrix_QC.sh`, `diff_gene_exp.sh`, and `visualize.sh` that you want to run in sequence. You can define a single process that iterates through them.
+
+```{{nextflow}}
+process run_scripts {
+    input:
+    path script_list
+
+    output:
+    path "output.log"
+
+    script:
+    """
+    while read script; do  # script is read from the list
+        bash $script >> output.log  # script execution happens
+    done < $script_list  # all scripts have been executed
+    """
+}
+
+workflow {
+    run_scripts(file('scripts_list.txt'))
+}
+```
+
+Where `scripts_list.txt` contains:
+
+```{.txt}
+matrix_QC.sh
+diff_gene_exp.sh
+visualize.sh
+```
+
+This will run the scripts in sequence and output the logs to `output.log`.

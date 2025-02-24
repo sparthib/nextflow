@@ -10,7 +10,7 @@ book:
     - index.qmd
     - processes.qmd
     - more_python_commands.qmd
-    - references.qmd
+    - running_scripts_in_sequence.qmd
 
 bibliography: references.bib
 
