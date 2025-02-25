@@ -1,6 +1,5 @@
 ---
 title: "Running Scripts in Sequence"
-format: html
 execute:
   eval: false  # Prevents all code chunks from running
 ---
@@ -40,7 +39,7 @@ workflow {
 
 Where `scripts_list.txt` contains:
 
-```{.txt}
+``` txt
 matrix_QC.sh
 diff_gene_exp.sh
 visualize.sh

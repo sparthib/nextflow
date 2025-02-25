@@ -12,8 +12,6 @@ book:
     - more_python_commands.qmd
     - running_scripts_in_sequence.qmd
 
-bibliography: references.bib
-
 format:
   html:
     theme: cosmo
